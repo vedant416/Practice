@@ -1,4 +1,4 @@
-```
+```python
 def removeDuplicates(nums,k):
 if len(nums) < k: return len(nums)
 slow = fast = k
