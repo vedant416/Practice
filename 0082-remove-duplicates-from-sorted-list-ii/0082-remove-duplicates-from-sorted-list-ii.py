@@ -10,13 +10,23 @@ class Solution:
         cur = head
 
         while cur and cur.next:
-            if cur.val != cur.next.val:
-                prev, cur = cur, cur.next
-            else:
+            if cur.val == cur.next.val:
+                
+                #skip
                 while cur.next and cur.val == cur.next.val:
                     cur = cur.next
+                
                 prev.next = cur.next
+                #inc cur
                 cur = cur.next
 
+            else:
+                prev = cur
+                cur = cur.next
+                
         return dummy.next
+    
+    
+       
+       
         
