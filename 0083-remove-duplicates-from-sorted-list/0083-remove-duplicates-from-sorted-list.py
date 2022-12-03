@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(next=head)
         cur = head
         while cur and cur.next:
             if cur.val == cur.next.val:
@@ -13,5 +14,5 @@ class Solution:
                 cur = cur.next
             
 
-        return head
+        return dummy.next
         
