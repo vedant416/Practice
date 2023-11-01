@@ -5,10 +5,8 @@ class Solution:
         res = 0
         
         while(l < r):
-            x = r - l 
-            y = min(height[l],height[r])
-            area = x * y
-            res = max(area,res)
+           
+            res = max(min(height[l],height[r]) * (r - l ) ,res)
             if height[l] < height[r]:
                 l += 1
             else:
