@@ -41,6 +41,8 @@ class Solution:
             x = self.mergeTwoLists(l1, l2)
             if x:
                 res.append(x)
+            else:
+                return res[0]
             
         return res[0]
             
