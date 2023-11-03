@@ -23,26 +23,18 @@ class Solution:
         
         return dummy.next
         
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-      
-        res = []
-        l1 = lists.pop() if len(lists)>0 else None
-        l2 = lists.pop() if len(lists)>0 else None
-        x = self.mergeTwoLists(l1, l2)
-        if x:
-            res.append(x)
-        else:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        if not lists or len(lists) == 0:
             return None
-        while True:
-            if len(lists) == 0 and len(res) == 1:
-                return res[0]
-            l1 = lists.pop() if len(lists)>0 else None
-            l2 = res.pop() if len(res)>0 else None
-            x = self.mergeTwoLists(l1, l2)
-            if x:
-                res.append(x)
-            
-        return res[0]
+
+        while len(lists) > 1:
+            mergedLists = []
+            for i in range(0, len(lists), 2):
+                l1 = lists[i]
+                l2 = lists[i + 1] if (i + 1) < len(lists) else None
+                mergedLists.append(self.mergeTwoLists(l1, l2))
+            lists = mergedLists
+        return lists[0]
             
             
             
