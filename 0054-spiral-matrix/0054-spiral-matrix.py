@@ -19,14 +19,14 @@ class Solution:
             for i in range(top, bottom + 1):
                 result.append(matrix[i][right])
             right -= 1
-            if left > right:
+            if right < left:
                 break
 
             # Traverse from right to left
             for i in range(right, left - 1, -1):
                 result.append(matrix[bottom][i])
             bottom -= 1
-            if top > bottom:
+            if bottom < top:
                 break
 
             # Traverse from bottom to top
