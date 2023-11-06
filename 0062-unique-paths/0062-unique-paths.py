@@ -1,5 +1,6 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
+        @cache
         def dfs(r, c):
             if r >= m or c >= n:
                 return 0
