@@ -3,11 +3,10 @@ class Solution:
         map = {}
         
         for i, n in enumerate(nums):
-            req  = target - n
-            if req in map:
-                return [i, map[req]]
+            # n + m = target
+            m = target - n
+            if m in map:
+                return [map[m], i]
             else:
-                map[n] = i
-        
-        
-        
+                map[n] = i  
+                
