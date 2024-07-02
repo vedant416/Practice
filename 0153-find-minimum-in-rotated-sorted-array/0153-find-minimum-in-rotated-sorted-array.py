@@ -4,10 +4,19 @@ class Solution:
         
         while low < high:
             mid = low + (high - low) // 2
-            if mid !=0 and num[mid-1] > num[mid]:
+            
+            # 4 5 6 0 1 2 3
+            # L     M     R
+            if mid !=0 and num[mid - 1] > num[mid]:
                 return num[mid]
+            
+            # 4 5 6 0 1 2 3
+            # L       M   R
             if num[mid] < num[high]:
                 high = mid
+            
+            # 4 5 6 0 1 2 3
+            # L   M       R
             elif num[mid] > num[high]:
                 low = mid + 1
 
