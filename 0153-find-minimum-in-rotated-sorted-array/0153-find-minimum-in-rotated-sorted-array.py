@@ -9,4 +9,4 @@ class Solution:
             elif num[mid] > num[high]:
                 low = mid + 1
 
-        return num[low]
+        return num[high]
